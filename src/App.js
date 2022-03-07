@@ -8,6 +8,7 @@ import song from './media/song/song_solitude.mp3'
 import playIcon from './media/icons/icon_Play.png'
 import stopIcon from './media/icons/icon_Stop.png'
 import resetIcon from './media/icons/icon_Reset.png'
+import './App.css';
 // import mute from './media/icons/icon_Mute.png'
 
 function App() {
@@ -17,9 +18,8 @@ function App() {
   const { songPlay, setSongPlay } = useContext(myContext);
   const [ emptyInput, setEmptyInput ] = useState(true);
   const { secondsTitle, minutesTitle } = useContext(myContext);
+  const { inputView, setInputView } = useContext(myContext);
   const audio = new Audio(song);
-  const inputs = document.querySelectorAll("input");
-
 
   const play = () => {
     audio.volume = 0.2;
@@ -44,6 +44,7 @@ function App() {
       setSongPlay(false);
     }
     setEmptyInput(true);
+    setInputView(false)
     reset();
   }
 
@@ -55,15 +56,18 @@ function App() {
     clearTimeout(timeoutId);
   }
 
-  const handleReset = () => {
+  const handleReset = (e) => {
     if(seconds !== 0) {
       clearTimeout(timeoutId);
       setSeconds(0);
     }
     setstartPauseToggle(false);
     setEmptyInput(true);
-    inputs[0].value = '';
-    inputs[1].value = '';
+    setInputView(true);
+    const inputMinutes = e.target.parentElement.parentElement[0];
+    const inputSeconds = e.target.parentElement.parentElement[1];
+    inputMinutes.value = '';
+    inputSeconds.value = '';
   }
   
   const inputValidation = (e) => {
@@ -118,17 +122,19 @@ function App() {
         <Timer />
         <Form onSubmit={handleSubmit}>
         <div styles={{ position: 'relative' }}>
-        <Input required={emptyInput} onChange={ inputValidation } name='minutes'  type='number' min="1" placeholder="Minuto(s)" 
-        style={{fontSize: "1vw", color: 'black'}} 
-        />
-        <Input required={emptyInput} onChange={ inputValidation } name='seconds' type='number' min="1" placeholder="Segundo(s)" style={{ fontSize: "1vw" }}/>
+        { inputView && 
+        <div>
+        <Input className='input' required={emptyInput} onChange={ inputValidation } name='minutes'  type='number' min="1" placeholder="Minuto(s)" style={{fontSize: "1vw"}}/>
+        <Input className='input' required={emptyInput} onChange={ inputValidation } name='seconds' type='number' min="1" placeholder="Segundo(s)" style={{fontSize: "1vw"}}/>
+        </div>
+        }
         </div>
         <button style={{
           backgroundColor: 'transparent',
           border: 'none',
           cursor: 'pointer',
           paddingRight: '25px'
-        }} type='submit' hidden={startPauseToggle}>
+        }} type='submit' name='start' hidden={startPauseToggle}>
           <img width='96px' src={playIcon} alt='botão com o icone play'></img>
         </button>
         {

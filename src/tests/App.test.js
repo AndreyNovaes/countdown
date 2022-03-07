@@ -13,10 +13,9 @@ const renderWithContext = (component) => {
 describe('Testa a renderização inicial do timer', () => {
   it('verifica a renderização dos Botões, pauseBtn e StartBtn', () => {
     renderWithContext(<App />)
-    const startBtn = screen.getByRole('button', {name: /Start/i})  
+    const startBtn = screen.getByRole('spinbutton'[0]);
     expect(startBtn).toBeInTheDocument();
-    const resetButton = screen.getByRole('button', {name: /Reset/i})  
-    expect(resetButton).toBeInTheDocument();
+    console.log(startBtn);
   });
 
   // it('Verifica a renderização dos meus Inputs', () => {

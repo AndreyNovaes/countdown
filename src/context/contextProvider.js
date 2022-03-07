@@ -9,7 +9,7 @@ export default function ContextProvide({ children }) {
   const [songPlay, setSongPlay] = useState(true)
   const [minutesTitle, setMinutesTitle] = useState(0)
   const [secondsTitle, setSecondsTitle] = useState(0)
-
+  const [inputView, setInputView] = useState(true);
 
   const contextValue = {
     seconds,
@@ -24,6 +24,8 @@ export default function ContextProvide({ children }) {
     setMinutesTitle,
     secondsTitle,
     setSecondsTitle,
+    inputView,
+    setInputView,
   };
 
   return (
