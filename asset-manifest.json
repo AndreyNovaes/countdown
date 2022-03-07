@@ -1,6 +1,7 @@
 {
   "files": {
-    "main.js": "/countdown/static/js/main.70993e34.js",
+    "main.css": "/countdown/static/css/main.833ccfa1.css",
+    "main.js": "/countdown/static/js/main.84370580.js",
     "static/js/787.3e4eab1a.chunk.js": "/countdown/static/js/787.3e4eab1a.chunk.js",
     "static/media/song_solitude.mp3": "/countdown/static/media/song_solitude.f6bd560d5fe5f08138b0.mp3",
     "static/media/wallpaper-60fpsfixo.m4v": "/countdown/static/media/wallpaper-60fpsfixo.bc34099fbd4ca459f523.m4v",
@@ -8,10 +9,12 @@
     "static/media/icon_Stop.png": "/countdown/static/media/icon_Stop.eab8905dd0f707ef13e0.png",
     "static/media/icon_Reset.png": "/countdown/static/media/icon_Reset.2cc68602ad1abebc1bfe.png",
     "index.html": "/countdown/index.html",
-    "main.70993e34.js.map": "/countdown/static/js/main.70993e34.js.map",
+    "main.833ccfa1.css.map": "/countdown/static/css/main.833ccfa1.css.map",
+    "main.84370580.js.map": "/countdown/static/js/main.84370580.js.map",
     "787.3e4eab1a.chunk.js.map": "/countdown/static/js/787.3e4eab1a.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.70993e34.js"
+    "static/css/main.833ccfa1.css",
+    "static/js/main.84370580.js"
   ]
 }
