@@ -8,8 +8,6 @@
 
 - [Acesso ao projeto](#acesso-ao-projeto)
 
-- [Abrir e rodar o projeto](#abrir-e-rodar-o-projeto)
-
 ## Descrição do projeto 
 
 <p align="justify">
