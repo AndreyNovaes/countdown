@@ -31,4 +31,4 @@
 ###
 
 ## Acesso ao projeto
-  Acesse o link da [DEMO](andreynovaes.github.io/countdown/)
+  Acesse o link do [deploy](https://andreynovaes.github.io/countdown/)
